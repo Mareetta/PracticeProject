@@ -16,7 +16,7 @@ import org.json.simple.JSONObject;
 
 
 
-public class ReadExcel {
+public class ExcelFileReader {
 	public ArrayList<JSONObject> readExcelFile() {
 		//public void readExcelFile(){
 		ArrayList<JSONObject> arrayList=new ArrayList<JSONObject>();

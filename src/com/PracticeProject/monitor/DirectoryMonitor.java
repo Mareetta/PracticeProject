@@ -7,12 +7,14 @@ import java.util.TimerTask;
 
 
 
+
 import com.PracticeProject.DAO.PersonService;
-import com.PracticeProject.readexcel.ReadExcel;
+import com.PracticeProject.readexcel.ExcelFileReader;
 
 
 
-public class DirectoryMonitor extends ReadExcel  {
+
+public class DirectoryMonitor extends ExcelFileReader  {
 	public static void main(String args[]) {
 
 

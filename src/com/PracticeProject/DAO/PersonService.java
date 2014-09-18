@@ -10,13 +10,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.PracticeProject.Parse.ConnectParse;
-import com.PracticeProject.readexcel.ReadExcel;
+import com.PracticeProject.readexcel.ExcelFileReader;
+
 
 
 
 public class PersonService implements PersonDAO{
 
-	ArrayList<JSONObject> excelData = new ReadExcel().readExcelFile();
+	ArrayList<JSONObject> excelData = new ExcelFileReader().readExcelFile();
 	JSONObject josObject = new JSONObject();
 	StringEntity input;
 	Person person=new Person();
