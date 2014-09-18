@@ -65,8 +65,8 @@ public class PersonService implements PersonDAO{
 			JSONArray jsonArray = null;
 			String str;
 
-			String where = URLEncoder.encode("{\"NAME\":\"MARITA\"}","UTF-8");
-			str = "https://www.parse.com/1/classes/Employees"+where;
+			String where = URLEncoder.encode("{\"NAME\":\"Marita\"}","UTF-8");
+			str = "https://www.parse.com/1/classes/Employees?where="+where;
 
 			System.out.println(str);
 			jsonArray = new ConnectParse().httpgetMethod(URI.create(str));
@@ -87,6 +87,21 @@ public class PersonService implements PersonDAO{
 			e.printStackTrace();
 		}
 		return person;
+
+	}
+	public void deleteCertainPerson() {
+		// TODO Auto-generated method stub
+		Person person1 = getPerson(); 
+		String str;
+		str = "https://www.parse.com/1/classes/Employees/"+person1.getId();
+		System.out.println(str);  
+
+		try {
+			new ConnectParse().httpdeleteMethod(URI.create(str));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 
 	}
 
@@ -148,6 +163,7 @@ public class PersonService implements PersonDAO{
 		Person person=new Person();
 		ps.savePerson();
 		ps.updatePerson();
+		ps.deleteCertainPerson();
 		ps.deletePerson();
 	}
 

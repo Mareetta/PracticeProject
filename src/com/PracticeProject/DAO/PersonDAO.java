@@ -9,6 +9,7 @@ public interface PersonDAO {
 	public void updatePerson();
 	public Person getPerson();
 	public void deletePerson();
+	public void deleteCertainPerson();
 	public ArrayList<Person> getAllPerson();
 
 }
